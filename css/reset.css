@@ -1,48 +1,45 @@
 /* =========================================================
    Minimal, portable CSS Reset
-   - Safe defaults without opinionated styling
+   - Убирает все дефолтные отступы
+   - Универсальные безопасные значения
    ========================================================= */
 
-/* 1) Use a natural box layout model */
+/* 1) Универсальная модель коробки */
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* 2) Remove default margins on common block elements */
-:where(h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd) {
+/* 2) Сбрасываем margin у body и типовых блоков */
+body,
+h1, h2, h3, h4, h5, h6,
+p, figure, blockquote, dl, dd {
   margin: 0;
 }
 
-/* 3) Root text adjustments */
-:root {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-/* 4) Base body defaults */
+/* 3) Базовые настройки body */
 body {
   min-height: 100vh;
-  line-height: 1.5;               /* readable default line-height */
+  line-height: 1.5;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* 5) Images, video, SVG: scale down and behave like block elements */
+/* 4) Медиаэлементы */
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
   height: auto;
 }
 
-/* 6) Remove list styles when using semantic "list" roles */
+/* 5) Списки без отступов, если явно назначена роль list */
 :where(ul[role="list"], ol[role="list"]) {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* 7) Links inherit color and skip underlines unless styled intentionally */
+/* 6) Ссылки по умолчанию */
 a {
   color: inherit;
   text-decoration: none;
@@ -51,7 +48,7 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-/* 8) Form controls: inherit typography and remove UA margins */
+/* 7) Формы */
 :where(button, input, textarea, select) {
   font: inherit;
   color: inherit;
@@ -61,17 +58,17 @@ button {
   background: none;
   border: 0;
   padding: 0;
-  cursor: pointer;                /* feels like a button by default */
+  cursor: pointer;
 }
 textarea {
-  resize: vertical;               /* avoid layout breaks from horizontal resize */
+  resize: vertical;
 }
 ::placeholder {
   color: inherit;
-  opacity: 1;                     /* consistent placeholder visibility */
+  opacity: 1;
 }
 
-/* 9) Fieldset/legend normalization */
+/* 8) Fieldset/legend */
 fieldset {
   margin: 0;
   padding: 0;
@@ -81,7 +78,7 @@ legend {
   padding: 0;
 }
 
-/* 10) Tables: collapse borders and remove cell padding */
+/* 9) Таблицы */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -90,7 +87,7 @@ td, th {
   padding: 0;
 }
 
-/* 11) Horizontal rule: thin separator by default */
+/* 10) Горизонтальная линия */
 hr {
   height: 0;
   border: 0;
@@ -98,25 +95,23 @@ hr {
   opacity: 0.2;
 }
 
-/* 12) Make the hidden attribute consistent across browsers */
+/* 11) [hidden] */
 :where([hidden]) {
   display: none !important;
 }
 
-/* 13) Details/summary quality-of-life */
+/* 12) details/summary */
 details summary {
   cursor: pointer;
 }
 
-/* 14) Dialog base normalization (no default padding/margins) */
+/* 13) dialog */
 dialog {
   margin: 0;
   padding: 0;
 }
 
-/* 15) Focus styles:
-   - Keep strong focus for keyboard users (:focus-visible)
-   - Remove focus ring when it was programmatically/mouse triggered */
+/* 14) Фокус */
 :where(:focus:not(:focus-visible)) {
   outline: none;
 }
@@ -125,7 +120,7 @@ dialog {
   outline-offset: 2px;
 }
 
-/* 16) Respect users who prefer reduced motion */
+/* 15) Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
