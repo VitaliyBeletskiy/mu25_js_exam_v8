@@ -17,9 +17,11 @@ body {
     "Helvetica Neue", Arial, sans-serif;
 }
 
-.wrapper {
+.wrapper,
+.wrapper-large {
   padding-left: 12px;
   padding-right: 12px;
+  max-width: 100%;
 }
 /* #endregion General */
 
@@ -43,10 +45,6 @@ body {
   align-items: center;
   gap: 0.5em;
 }
-/* .btn:hover {
-  background-color: var(--color-btn-hover);
-  border-color: var(--color-btn-hover);
-} */
 .btn:active {
   background-color: var(--color-btn-hover);
   border-color: var(--color-btn-hover);
@@ -104,6 +102,7 @@ body {
   align-items: center;
 }
 .name {
+  font-size: 36px;
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -124,9 +123,9 @@ body {
 
 /* #region Album */
 .album {
-  padding-top: 2rem; /* отступ сверху для воздуха */
+  padding-top: 2rem;
   margin-top: 2rem;
-  border-top: 1px solid var(--color-btn-hover); /* разделительная линия */
+  border-top: 1px solid var(--color-btn-hover);
 }
 
 .album-header {
@@ -231,18 +230,17 @@ body {
 }
 /* #endregion Footer */
 
-/* #region Media Queries */
+/* #region Media Queries Tablet */
 @media (min-width: 758px) {
   .wrapper {
     margin: 0 auto;
-    padding-left: 32px;
-    padding-right: 32px;
-    position: relative;
-    max-width: 1200px;
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 960px;
   }
 
   .wrapper-large {
-    max-width: 1492px;
+    max-width: 1200px;
   }
 
   /*#region Header */
@@ -258,7 +256,6 @@ body {
   .header-content {
     flex-direction: row;
     margin-inline: auto;
-    padding-inline: 32px;
   }
   .avatar {
     align-self: flex-start;
@@ -268,27 +265,16 @@ body {
     align-items: flex-start;
     margin: 90px 16px 0 16px;
   }
-  .name {
-    font-size: 42px;
-  }
+
   .header-content .button {
     margin: 90px 16px 0 16px;
   }
   /*#endregion Header */
 
-  /*#region Presentation */
-  .presentation {
-    max-width: 1200px;
-    margin-inline: 184px;
-    padding-inline: 32px;
-  }
-  /*#endregion Presentation */
-
   /* #region Album */
   .album-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-
   .album-header-left {
     display: flex;
     flex-direction: column;
@@ -308,4 +294,29 @@ body {
   }
   /*#endregion Footer */
 }
-/* #endregion Media Queries */
+/* #endregion Media Queries Tablet */
+
+/* #region Media Queries Desktop*/
+@media (min-width: 1024px) {
+  .wrapper {
+    padding-left: 32px;
+    padding-right: 32px;
+    max-width: 1160px;
+  }
+
+  .wrapper-large {
+    max-width: 1492px;
+  }
+
+  /*#region Presentation */
+  .presentation {
+    margin-inline: 152px;
+    padding-inline: 32px;
+  }
+  /*#endregion Presentation */
+
+  .album-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+/* #endregion Media Queries Desktop */
