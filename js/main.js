@@ -1,5 +1,8 @@
-import { initMenu } from './menu.js';
+import { initMenu } from "./menu.js";
+import { loadAlbumPreviewImages } from "./album_preview.js";
 
-document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener("DOMContentLoaded", () => {
   initMenu();
+  loadAlbumPreviewImages(); 
 });

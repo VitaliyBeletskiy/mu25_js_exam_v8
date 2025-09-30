@@ -237,8 +237,18 @@ body {
 
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 5%;
+}
+
+/* onMobile displey only one artworks */
+.album-grid .artw {
+  display: none;
+}
+/* onMobile displey only one artworks */
+.album-grid .artw:nth-child(-n + 1) {
+  display: block;
 }
 /* #endregion Album */
 
@@ -359,6 +369,14 @@ body {
     align-items: flex-start;
     width: auto;
   }
+  /* on Tablet display only three artworks */
+  .album-grid .artw {
+    display: none;
+  }
+  /* on Tablet display only three artworks */
+  .album-grid .artw:nth-child(-n + 3) {
+    display: block;
+  }
   /* #endregion Album */
 
   /*#region Footer */
@@ -395,6 +413,14 @@ body {
 
   .album-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+  /* on Desktop display only four artworks */
+  .album-grid .artw {
+    display: none;
+  }
+  /* on Desktop display only four artworks */
+  .album-grid .artw:nth-child(-n + 4) {
+    display: block;
   }
 }
 /* #endregion Media Queries Desktop */
