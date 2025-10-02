@@ -30,7 +30,7 @@
             <p class="loc">Malmö</p>
           </div>
           <div class="button">
-            <button class="btn" type="button">
+            <button class="btn show-dialog" type="button">
               <span class="icon icon-mail"></span>
               <span>Message</span>
             </button>
@@ -121,7 +121,7 @@
       <div class="wrapper wrapper-large">
         <h3 class="footer__title">Contact Nadezda Beletskaya</h3>
         <div class="footer-btn-wrapper">
-          <button class="btn" type="button">
+          <button class="btn show-dialog" type="button">
             <span class="icon icon-mail"></span>
             <span>Message</span>
           </button>
@@ -129,6 +129,35 @@
         </div>
       </div>
     </footer>
+
+    <dialog class="dialog">
+      <div class="dialog__wrapper">
+        <div class="dialog__header">
+          <span></span>
+          <h3 class="dialog__title">Message to Nadezda</h3>
+          <button id="dialog__close-button" class="dialog__close" aria-label="Close" type="button"></button>
+        </div>
+        <div class="dialog__body">
+          <form id="dialog-form" class="dialog__form" method="post">
+            <label class="dialog__row">
+              <span class="dialog__label-text">Your name:</span>
+              <input id="dialog__name-input" type="text" name="name" required class="input" />
+            </label>
+            <label class="dialog__row">
+              <span class="dialog__label-text">Your email:</span>
+              <input id="dialog__email-input" type="email" name="email" required class="input" />
+            </label>
+            <label class="dialog__row">
+              <span class="dialog__label-text">Message:</span>
+              <textarea id="dialog__message-input" name="message" required class="input" rows="5"></textarea>
+            </label>
+          </form>
+        </div>
+        <div class="dialog__footer">
+          <button id="dialog__submit-button" class="btn" type="submit" form="dialog-form">Send</button>
+        </div>
+      </div>
+    </dialog>
 
     <script src="js/main.js" type="module"></script>
   </body>

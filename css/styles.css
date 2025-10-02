@@ -313,6 +313,88 @@ body {
 }
 /* #endregion Footer */
 
+/* #region Dialog */
+.dialog[open] {
+  max-width: 600px;
+  width: calc(100% - 24px);
+  margin: auto auto;
+  padding-block: 12px;
+  padding-inline: 20px;
+
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+.dialog__wrapper {
+  width: 100%;
+}
+
+.dialog__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-btn-hover);
+}
+
+.dialog__title {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.dialog__close {
+  width: 24px;
+  height: 24px;
+  background: currentColor;
+  border: none;
+  cursor: pointer;
+
+  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7a1 1 0 0 0-1.41 1.41L10.59 12l-4.89 4.89a1 1 0 0 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z"/></svg>')
+    no-repeat center / contain;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7a1 1 0 0 0-1.41 1.41L10.59 12l-4.89 4.89a1 1 0 0 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4z"/></svg>')
+    no-repeat center / contain;
+}
+
+.dialog__form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.dialog__row {
+  display: block;
+  margin-top: 12px;
+}
+.dialog__label-text {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.input {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid var(--color-btn-hover);
+  border-radius: 2px;
+}
+.dialog__footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+/* #endregion Dialog */
+
 /* #region Media Queries Tablet */
 @media (min-width: 758px) {
   .wrapper {
