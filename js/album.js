@@ -1,7 +1,9 @@
 import { initMenu } from "./menu.js";
+import { initToTop } from "./to_top.js";
 import { loadAlbumImages } from "./image_loader.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
-  loadAlbumImages('all');
+  initToTop();
+  loadAlbumImages("all");
 });
