@@ -11,11 +11,11 @@
     <header class="header">
       <div class="header-img"></div>
 
-      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-controls="siteNav" aria-expanded="false">
-        <span class="icon icon-menu"></span>
+      <button id="hamburger" class="hamburger" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+        <span class="icon icon-menu" aria-hidden="true"></span>
       </button>
 
-      <nav id="siteNav" class="mobile-nav" aria-hidden="true">
+      <nav id="site-nav" class="mobile-nav" aria-hidden="true" aria-label="Main navigation">
         <a class="mobile-nav__item" href="album.html">Album</a>
       </nav>
 
@@ -30,7 +30,7 @@
           </div>
           <div class="button">
             <button class="btn show-dialog" type="button">
-              <span class="icon icon-mail"></span>
+              <span class="icon icon-mail" aria-hidden="true"></span>
               <span>Message</span>
             </button>
           </div>
@@ -119,19 +119,19 @@
         <h3 class="footer__title">Contact Nadezda Beletskaya</h3>
         <div class="footer-btn-wrapper">
           <button class="btn show-dialog" type="button">
-            <span class="icon icon-mail"></span>
+            <span class="icon icon-mail" aria-hidden="true"></span>
             <span>Message</span>
           </button>
-          <a href="https://www.instagram.com/missbelka" aria-label="Instagram" target="_blank" rel="nofollow noopener" class="btn"><span class="icon icon-instagram"></span></a>
+          <a href="https://www.instagram.com/missbelka" aria-label="Instagram" target="_blank" rel="nofollow noopener" class="btn"><span class="icon icon-instagram" aria-hidden="true"></span></a>
         </div>
       </div>
     </footer>
 
-    <dialog class="dialog">
+    <dialog class="dialog" aria-labelledby="dialog-title">
       <div class="dialog__wrapper">
         <div class="dialog__header">
           <span></span>
-          <h3 class="dialog__title">Message to Nadezda</h3>
+          <h3 id="dialog-title" class="dialog__title">Message to Nadezda</h3>
           <button id="dialog__close-button" class="dialog__close" aria-label="Close" type="button"></button>
         </div>
         <div class="dialog__body">

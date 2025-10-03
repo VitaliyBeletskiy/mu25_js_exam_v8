@@ -1,13 +1,13 @@
 /** Menu init (on mobile only).
  * Requires HTML:
- *  - <button id="hamburger" aria-controls="siteNav" aria-expanded="false">…</button>
- *  - <nav id="siteNav" aria-hidden="true">…</nav>
+ *  - <button id="hamburger" aria-controls="site-nav" aria-expanded="false">…</button>
+ *  - <nav id="site-nav" aria-hidden="true">…</nav>
  * CSS must have .menu-open .mobile-nav
  */
 export function initMenu() {
   const body = document.body;
   const btnHamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('siteNav');
+  const nav = document.getElementById('site-nav');
 
   if (!btnHamburger || !nav) return;
 
