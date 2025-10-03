@@ -68,27 +68,33 @@ function createDocumentFragmentForArtworks(artworks) {
   return fragment;
 }
 
+async function loadArtworks(url = "../data/album.json") {
+  const res = await fetch(url, { cache: "no-cache" });
+  if (!res.ok) {
+    throw new Error(`Failed to load JSON: ${res.status} ${res.statusText}`);
+  }
+
+  const raw = await res.json();
+  if (!Array.isArray(raw)) throw new Error("JSON root must be an array");
+
+  return raw.map((item) => new Artwork(item));
+}
+
 /**
  * @param {number|'all'} limit
  */
-
 export async function loadAlbumImages(limit = 4) {
-  async function loadArtworks(url = "../data/album.json") {
-    const res = await fetch(url, { cache: "no-cache" });
-    if (!res.ok) {
-      throw new Error(`Failed to load JSON: ${res.status} ${res.statusText}`);
-    }
-
-    const raw = await res.json();
-    if (!Array.isArray(raw)) throw new Error("JSON root must be an array");
-
-    return raw.map((item) => new Artwork(item));
+  const albumGrid = document.querySelector(".album-grid");
+  const txtWorksNumber = document.getElementById("works-number");
+  if (!albumGrid || !txtWorksNumber) {
+    throw new Error("No album-grid or works-number element found in DOM");
   }
 
-  const albumGrid = document.querySelector(".album-grid");
   let selectedArtworks;
+  let artworksNumber = 0;
   try {
     const artworks = await loadArtworks();
+    artworksNumber = artworks.length;
     const sortedArtworks = artworks.sort((a, b) =>
       Number(a.filename) > Number(b.filename) ? 1 : -1
     );
@@ -104,4 +110,5 @@ export async function loadAlbumImages(limit = 4) {
 
   albumGrid.innerHTML = "";
   albumGrid.appendChild(fragment);
+  txtWorksNumber.textContent = artworksNumber;
 }
