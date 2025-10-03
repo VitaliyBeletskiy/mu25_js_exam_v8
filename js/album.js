@@ -1,9 +1,7 @@
 import { initMenu } from "./menu.js";
 import { loadAlbumImages } from "./album_preview.js";
-import { initDialog } from "./dialog.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
-  loadAlbumImages();
-  initDialog();
+  loadAlbumImages('all');
 });

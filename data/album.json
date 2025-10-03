@@ -106,5 +106,50 @@
       "size":"20,0 x 20,0 cm",
       "price":"1&nbsp;000 kr",
       "description":"This painting is a fragile Chinese technique, on true rice paper, with Chinese ink and watercolours. It is the traditional motive of insects, fruits and nature."
+   },
+   {
+      "filename":"013",
+      "title":"Yellow fields",
+      "date":"2023",
+      "technic":"Ink",
+      "size":"60,0 x 40,0 cm",
+      "price":"Sold",
+      "description":"This painting is a fragile Chinese technique, on true rice paper, with Chinese ink and watercolours. It is the traditional motive of insects, fruits and nature."
+   },
+   {
+      "filename":"014",
+      "title":"Pine corn hunter",
+      "date":"2023",
+      "technic":"Ink",
+      "size":"50,0 x 50,0 cm",
+      "price":"Sold",
+      "description":"This painting is a fragile Chinese technique, on true rice paper, with Chinese ink and watercolours. It is the traditional motive of insects, fruits and nature."
+   },
+   {
+      "filename":"015",
+      "title":"High Above",
+      "date":"2022",
+      "technic":"Ink",
+      "size":"30,0 x 50,0 cm",
+      "price":"Sold",
+      "description":"This painting is a fragile Chinese technique, on true rice paper, with Chinese ink and watercolours. It is the traditional motive of insects, fruits and nature."
+   },
+   {
+      "filename":"016",
+      "title":"Emperor's Escape",
+      "date":"2022",
+      "technic":"Ink",
+      "size":"60,0 x 60,0 cm",
+      "price":"Sold",
+      "description":"This painting is a fragile Chinese technique, on true rice paper, with Chinese ink and watercolours. It is the traditional motive of insects, fruits and nature."
+   },
+   {
+      "filename":"017",
+      "title":"Foggy Mountain",
+      "date":"2022",
+      "technic":"Ink",
+      "size":"40,0 x 40,0 cm",
+      "price":"4&nbsp;000 kr",
+      "description":"This painting is a fragile Chinese technique, on true rice paper, with Chinese ink and watercolours. It is the traditional motive of insects, fruits and nature."
    }
 ]

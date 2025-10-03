@@ -5,7 +5,12 @@
   --color-btn-hover: rgb(215, 215, 215);
   --color-text: rgb(0, 0, 0);
   --color-text-discreet: rgb(85, 85, 85);
-  --avatar-border: #ffffff;
+  --white: #ffffff;
+  --black: #000;
+
+  --mobile-album-grid-gap: 16px;
+  --tablet-album-grid-gap: 24px;
+  --desktop-album-grid-gap: 32px;
 }
 /* #endregion Variables */
 
@@ -93,7 +98,7 @@ body {
 .avatar {
   width: 150px;
   height: 150px;
-  border: 3px solid var(--avatar-border);
+  border: 3px solid var(--white);
   border-radius: 999px;
   overflow: hidden;
 }
@@ -237,17 +242,22 @@ body {
 
 .album-grid {
   display: grid;
-  /* grid-template-columns: repeat(2, 1fr); */
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 5%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--mobile-album-grid-gap);
+  align-items: center;
+}
+.album-grid .artw {
+  min-width: 0;
 }
 
-/* onMobile displey only one artworks */
 .album-grid .artw {
+  display: block;
+}
+.album-grid.preview .artw {
   display: none;
 }
-/* onMobile displey only one artworks */
-.album-grid .artw:nth-child(-n + 1) {
+/* onMobile displey only two artworks */
+.album-grid.preview .artw:nth-child(-n + 2) {
   display: block;
 }
 /* #endregion Album */
@@ -257,7 +267,7 @@ body {
   display: block;
   overflow: hidden;
   background: var(--color-surface-main);
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 20px 2px rgba(0,0,0,.2);
 }
 .artw-media img {
   display: block;
@@ -395,6 +405,54 @@ dialog::backdrop {
 }
 /* #endregion Dialog */
 
+/* #region Album Page Styles */
+.album-nav {
+  background: var(--white);
+  padding-block: 16px;
+  border-bottom: 1px solid var(--color-surface-elevated);
+}
+
+.album-nav .hamburger {
+  position: static; /* as it was position:absolute */
+}
+
+.hamburger--album {
+  color: var(--black);
+}
+
+.album-nav__home {
+  display: none;
+  font-weight: 500;
+}
+
+@media (min-width: 758px) {
+  .album-nav__home {
+    display: block;
+  }
+  .hamburger,
+  .mobile-nav {
+    display: none;
+  }
+}
+
+.album-header-content {
+  display: flex;
+  width: 100%;
+  margin: 32px auto;
+  max-width: 720px;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+}
+.album-header-content p {
+  margin-top: 16px;
+}
+
+.album-main > .wrapper {
+  padding-block: 32px;
+}
+/* #endregion Album Page Styles */
+
 /* #region Media Queries Tablet */
 @media (min-width: 758px) {
   .wrapper {
@@ -444,6 +502,7 @@ dialog::backdrop {
   /* #region Album */
   .album-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--tablet-album-grid-gap);
   }
   .album-header-left {
     display: flex;
@@ -451,12 +510,9 @@ dialog::backdrop {
     align-items: flex-start;
     width: auto;
   }
+
   /* on Tablet display only three artworks */
-  .album-grid .artw {
-    display: none;
-  }
-  /* on Tablet display only three artworks */
-  .album-grid .artw:nth-child(-n + 3) {
+  .album-grid.preview .artw:nth-child(-n + 3) {
     display: block;
   }
   /* #endregion Album */
@@ -495,13 +551,11 @@ dialog::backdrop {
 
   .album-grid {
     grid-template-columns: repeat(4, 1fr);
+    gap: var(--desktop-album-grid-gap);
   }
+
   /* on Desktop display only four artworks */
-  .album-grid .artw {
-    display: none;
-  }
-  /* on Desktop display only four artworks */
-  .album-grid .artw:nth-child(-n + 4) {
+  .album-grid.preview .artw:nth-child(-n + 4) {
     display: block;
   }
 }

@@ -4,6 +4,42 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Album</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
-  <body></body>
+  <body>
+    <nav class="album-nav" aria-label="Site">
+      <div class="wrapper wrapper-large">
+        <a class="album-nav__home" href="index.html">Home</a>
+
+        <button id="hamburger" class="hamburger hamburger--album" aria-label="Open menu" aria-controls="siteNav" aria-expanded="false">
+          <span class="icon icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+
+    <nav id="siteNav" class="mobile-nav" aria-hidden="true">
+      <a class="mobile-nav__item" href="index.html">Home</a>
+    </nav>
+
+    <header>
+      <div class="wrapper">
+        <div class="album-header-content">
+          <!-- <h1><a href="index.html">Nadezda Beletskaya</a></h1> -->
+          <h1>Chinese Ink & Watercolours</h1>
+          <p>My Chinese painting collection. The complicated and delicate technique give fragile motives of simplicity for everyone to find their own sophisticated understanding.</p>
+          <p>47 works</p>
+        </div>
+      </div>
+    </header>
+    <main class="album-main">
+      <div class="wrapper wrapper-large">
+        <div class="album-grid">
+          <!-- Album images will be loaded here by album.js -->
+        </div>
+      </div>
+    </main>
+
+    <script src="js/album.js" type="module"></script>
+  </body>
 </html>
