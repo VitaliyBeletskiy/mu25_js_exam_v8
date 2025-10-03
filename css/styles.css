@@ -187,16 +187,44 @@ body {
 /* #endregion Mobile Nav */
 
 /* #region Presentation */
-.presentation {
+.wrapper-presentation {
   padding-top: 1em;
   margin-bottom: 1em;
 }
+
 .presentation p {
   margin-bottom: 1em;
 }
 .presentation__title {
   font-weight: 600;
 }
+/* #region Read more */
+.presentation {
+  transition: max-height 1s ease;
+}
+
+.presentation.is-clamped {
+  display: -webkit-box;
+  -webkit-line-clamp: 7;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: calc(7 * 1lh);
+}
+
+.presentation.is-unclamped {
+  display: block;
+  max-height: 100vh;
+}
+
+.btn-text {
+  margin-top: 12px;
+  font-weight: 500;
+  color: var(--color-text-discreet);
+}
+.btn-text:hover {
+  color: var(--color-text);
+}
+/* #endregion Read more */
 /* #endregion Presentation */
 
 /* #region Album */
@@ -549,7 +577,7 @@ dialog::backdrop {
   }
 
   /*#region Presentation */
-  .presentation {
+  .wrapper-presentation {
     margin-inline: 152px;
     padding-inline: 32px;
   }
