@@ -68,7 +68,7 @@ function createDocumentFragmentForArtworks(artworks) {
   return fragment;
 }
 
-async function loadArtworks(url = "../data/album.json") {
+async function loadArtworks(url = new URL("../data/album.json", import.meta.url)) {
   const res = await fetch(url, { cache: "no-cache" });
   if (!res.ok) {
     throw new Error(`Failed to load JSON: ${res.status} ${res.statusText}`);
